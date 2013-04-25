@@ -1,0 +1,69 @@
+\documentclass[11pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{color}
+\usepackage{listings}
+\usepackage{a4wide}
+\usepackage{courier}
+\usepackage{lastpage}
+\usepackage{scrpage2}
+\usepackage{graphicx}
+
+
+\pagestyle{scrheadings}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+
+\lstset{
+	language=Pascal,
+	numbers=left,
+	basicstyle=\scriptsize\ttfamily,
+	numberstyle=\tiny,
+	numbersep=8pt,
+	keywordstyle=\color{blue},
+        stringstyle=\color{dkgreen},
+	showspaces=false,
+	showstringspaces=false
+	xleftmargin=\parindent
+}
+
+%general
+\newcommand{\course}{$course}
+\newcommand{\documentauthor}{$author}
+\newcommand{\documentdate}{$date}
+\newcommand{\documentname}{$documentname}
+
+%titlepage
+\title{\course \space | \space \documentname}
+\author{\documentauthor}
+\date{\documentdate}
+
+%footer, header
+\ifoot[]{\documentauthor}
+\ihead{\documentname}
+\ohead{\documentdate}
+\ofoot{Seite \thepage von \pageref{LastPage}}
+
+\begin{document}
+
+\begin{titlepage}
+	\maketitle
+	\tableofcontents
+\end{titlepage}
+
+%Beispiel 1
+\section{Beispiel 1}
+	\subsection{Lösungsidee}
+	Braucht so und so keiner den blöden Müll
+	\subsection{Sourcecode}
+	\lstinputlisting[]{test.pas}
+	\subsection{Testfälle}
+    Braucht so und so keiner den blöden Müll
+    %\includegraphics[scale=0.6]{img/image.png}
+\end{document}
