@@ -1,0 +1,4 @@
+adc
+===
+
+Automatic Document Creator
