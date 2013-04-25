@@ -5,6 +5,18 @@ from Cheetah.Template import Template
 import time
 from datetime import date
 
+numOfEx = 3
+
+def getExercises():
+    exercises = list()
+    for i in range(numOfEx):
+        exercise = dict()
+        exercise['title'] = 'Blablabla'
+        exercise['solutionText'] = 'Blablabla'
+        exercise['sourceFile'] = 'source.pas'
+        exercises.append(exercise)
+    return exercises
+
 #open file for writing
 f = open('compiled.tex', 'w')
 
@@ -12,14 +24,15 @@ f = open('compiled.tex', 'w')
 nameSpace = {
              'author': 'Max Mustermann',
              'course': 'ADF2 / PRO2 SS 13',
-             'date': date.today().isoformat()
-             'documentname': 'Übung #'
-             'documentname': 'Übung #'
+             'date': date.today().isoformat(),
+             'documentname': 'Uebung #',
+             'exercises': getExercises(),
+             'numOfEx': numOfEx,
             }
 
 #define template
-t = Template(file="templates/default.tex", searchList=[nameSpace])
+t = Template(file="templates/default.template", searchList=[nameSpace])
 
 #writing template to file
-f.write(str(t))
+f.write(str(t)) 
 f.close

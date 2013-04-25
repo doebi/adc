@@ -58,13 +58,15 @@
 	\tableofcontents
 \end{titlepage}
 
-%Beispiel 1
-\section{Beispiel 1}
+#for $ex in $exercises
+\section{$ex.title}
 	\subsection{Lösungsidee}
-	Braucht so und so keiner den blöden Müll
-	\subsection{Sourcecode}
-	\lstinputlisting[]{test.pas}
+	$ex.solutionText
+	\subsection{Quelltext}
+	\lstinputlisting[]{$ex.sourceFile}
 	\subsection{Testfälle}
-    Braucht so und so keiner den blöden Müll
-    %\includegraphics[scale=0.6]{img/image.png}
+        Braucht so und so keiner den blöden Müll
+        %\includegraphics[scale=0.6]{img/image.png}
+
+#end for
 \end{document}
