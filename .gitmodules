@@ -1,3 +1,0 @@
-[submodule "lib/cheetah"]
-	path = lib/cheetah
-	url = git@github.com:rtyler/cheetah.git
