@@ -38,7 +38,7 @@
 \newcommand{\course}{$course}
 \newcommand{\documentauthor}{$author}
 \newcommand{\documentdate}{$date}
-\newcommand{\documentname}{Uebung nn}
+\newcommand{\documentname}{$documentname}
 
 %titlepage
 \title{\course \space | \space \documentname}

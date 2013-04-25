@@ -13,6 +13,8 @@ nameSpace = {
              'author': 'Max Mustermann',
              'course': 'ADF2 / PRO2 SS 13',
              'date': date.today().isoformat()
+             'documentname': 'Übung #'
+             'documentname': 'Übung #'
             }
 
 #define template
