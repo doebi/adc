@@ -18,6 +18,10 @@ def getExercises():
         exercises.append(exercise)
     return exercises
 
+#get general config and edit
+def makeConfig():
+    
+
 def getConfig():
     #reading data from configfile
     config = ConfigParser.RawConfigParser()
@@ -50,9 +54,11 @@ def generateTex():
 def init():
     os.makedirs('.adc')
     open('.adc/.config', 'w').close()
+    makeConfig()
 
 #setup defaults if not exists
 if not os.path.exists('.adc'):
     init()
 
+#generate tex File
 generateTex()
