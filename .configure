@@ -1,9 +1,0 @@
-[global]
-author = Max Mustermann
-
-[document]
-documentname = Test Hallo 
-date = heute 
-coursename = ADF und so 
-source-language = Pascal 
-idea = idea.txt
