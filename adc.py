@@ -26,18 +26,15 @@ config = ConfigParser.RawConfigParser()
 config.read('.configure')
 
 #set data
-author = config.get('global', 'author')
-
-date = config.get('document', 'date')
-documentname = config.get('document', 'documentname')
-coursename = config.get('document', 'coursename')
+globalConfig = dict(config.items('global'))
+documentConfig = dict(config.items('document'))
 
 #defining data for use in template
 nameSpace = {
-             'author': author,
-             'course': coursename,
-             'date': date,
-             'documentname': documentname,
+             'author': globalConfig['author'],
+             'course': documentConfig['coursename'],
+             'date': documentConfig['date'],
+             'documentname': documentConfig['documentname'],
              'exercises': getExercises(),
              'numOfEx': numOfEx,
             }
