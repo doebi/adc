@@ -1,7 +1,7 @@
-adc
-===
-
 Automatic Document Creator 
+==========================
+
+key features
 ---------------------------
 
 * global configuration
