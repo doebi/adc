@@ -33,12 +33,12 @@ def makeConfig():
     config = ConfigParser.RawConfigParser()
 
     config.add_section('document')
-    config.set('document', 'author', '')
-    config.set('document', 'documentname', '')
-    config.set('document', 'date', '')
-    config.set('document', 'coursename', '')
-    config.set('document', 'source-language', '')
+    config.set('document', 'author', 'Max Mustermann')
+    config.set('document', 'documentname', 'Uebung 3')
+    config.set('document', 'date', '2013-04-29')
+    config.set('document', 'coursename', 'ADF oder so')
     config.set('document', 'idea', 'idea.txt')
+    config.set('document', 'exercice-pattern', 'idea.txt')
 
     with open('.adc/.config', 'w') as configfile:
         config.write(configfile);
