@@ -8,13 +8,13 @@ key features
 /home/.adcconfig
 
 * individual folder structure - global & document-based configuration
-  eg, /homework1/exercice1
-                /exercice2
-                /....
+  - eg, /homework1/exercice1
+                  /exercice2
+                  /....
 
-  or. /hw1/ex1
-          /ex2
-          /...
+  - or. /hw1/ex1
+            /ex2
+            /...
 
 Commands (not implemented yet)
 ------------------------------
