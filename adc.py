@@ -8,14 +8,6 @@ import fnmatch
 import ConfigParser
 from datetime import date
 
-numOfEx = 5 
-
-def getFiles(path, pattern):
-      return [i for r, NIL, items in os.walk(path) for i in items if fnmatch.fnmatch(i, pattern)];
-
-def getFolders(path, pattern):
-      return [i for r, items, NIL in os.walk(path) for i in items if fnmatch.fnmatch(i, pattern)];
-
 def getExercises():
     exercises = list()
     for i in range(numOfEx):
@@ -26,31 +18,41 @@ def getExercises():
         exercises.append(exercise)
     return exercises
 
-#open file for writing
-f = open('compiled.tex', 'w')
+def getConfig():
+    #reading data from configfile
+    config = ConfigParser.RawConfigParser()
+    config.read('.adc/.config')
 
-#reading data from configfile
-config = ConfigParser.RawConfigParser()
-config.read('.configure')
+#Generate Latex File
+def generateTex():
+    config = getConfig()
 
-#set data
-globalConfig = dict(config.items('global'))
-documentConfig = dict(config.items('document'))
+    #open file for writing
+    f = open('compiled.tex', 'w')
 
-#defining data for use in template
-nameSpace = {
-             'author': globalConfig['author'],
-             'course': documentConfig['coursename'],
-             'date': documentConfig['date'],
-             'documentname': documentConfig['documentname'],
-             'exercises': getExercises(),
-             nameSpace['numOfEx']: numOfEx;
-             'numOfEx': numOfEx,
-            }
+    #defining data for use in template
+    nameSpace = {
+                 'author': config['author'],
+                 'course': config['coursename'],
+                 'date': config['date'],
+                 'documentname': config['documentname'],
+                 'exercises': getExercises(),
+                }
 
-#define template
-t = Template(file="templates/default.template", searchList=[nameSpace])
+    #define template
+    t = Template(file=".adc/templates/default.template", searchList=[nameSpace])
 
-#writing template to file
-f.write(str(t)) 
-f.close
+    #writing template to file
+    f.write(str(t))
+    f.close
+
+#Init
+def init():
+    os.makedirs('.adc')
+    open('.adc/.config', 'w').close()
+
+#setup defaults if not exists
+if not os.path.exists('.adc'):
+    init()
+
+generateTex()
