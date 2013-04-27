@@ -3,9 +3,10 @@
 
 from Cheetah.Template import Template
 import time
+import ConfigParser
 from datetime import date
 
-numOfEx = 10
+numOfEx = 5 
 
 def getExercises():
     exercises = list()
@@ -20,12 +21,19 @@ def getExercises():
 #open file for writing
 f = open('compiled.tex', 'w')
 
+#reading data from configfile
+config = ConfigParser.RawConfigParser()
+config.read('.configure')
+
+#set data
+author = config.get('global', 'name')
+
 #defining data for use in template
 nameSpace = {
-             'author': 'Max Mustermann',
+             'author': author,
              'course': 'ADF2 / PRO2 SS 13',
              'date': date.today().isoformat(),
-             'documentname': 'Uebung #',
+             'documentname': 'Uebung 333',
              'exercises': getExercises(),
              'numOfEx': numOfEx,
             }

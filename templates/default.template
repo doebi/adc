@@ -63,7 +63,7 @@
 	\subsection{Lösungsidee}
 	$ex.solutionText
 	\subsection{Quelltext}
-	\lstinputlisting[]{$ex.sourceFile}
+	%\lstinputlisting[]{$ex.sourceFile}
 	\subsection{Testfälle}
         Braucht so und so keiner den blöden Müll
         %\includegraphics[scale=0.6]{img/image.png}
