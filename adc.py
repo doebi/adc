@@ -27,6 +27,22 @@ def getConfig():
     documentConfig = dict(config.items('document')) 
     return documentConfig
 
+def makeConfig():
+    import ConfigParser
+
+    config = ConfigParser.RawConfigParser()
+
+    config.add_section('document')
+    config.set('document', 'author', '')
+    config.set('document', 'documentname', '')
+    config.set('document', 'date', '')
+    config.set('document', 'coursename', '')
+    config.set('document', 'source-language', '')
+    config.set('document', 'idea', 'idea.txt')
+
+    with open('.adc/.config', 'w') as configfile:
+        config.write(configfile);
+
 #Generate Latex File
 def generateTex():
     config = getConfig()
