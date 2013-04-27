@@ -1,0 +1,5 @@
+[global]
+name = Max Mustermann
+
+[document]
+
