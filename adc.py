@@ -44,6 +44,7 @@ nameSpace = {
              'date': documentConfig['date'],
              'documentname': documentConfig['documentname'],
              'exercises': getExercises(),
+             nameSpace['numOfEx']: numOfEx;
              'numOfEx': numOfEx,
             }
 
