@@ -16,20 +16,17 @@ def getExercises():
         exercise['solutionText'] = 'Blablabla'
         exercise['sourceFile'] = 'source.pas'
         exercises.append(exercise)
-    return exercises
-
-#get general config and edit
-def makeConfig():
-    
+    return exercises    
 
 def getConfig():
     #reading data from configfile
     config = ConfigParser.RawConfigParser()
     config.read('.adc/.config')
+    return config
 
 #Generate Latex File
 def generateTex():
-    config = getConfig()
+    config =  getConfig()
 
     #open file for writing
     f = open('compiled.tex', 'w')
