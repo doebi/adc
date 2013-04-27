@@ -8,14 +8,14 @@ key features
 /home/.adcconfig
 
 * individual folder structure - global & document-based configuration
-  - eg, /homework1/exercice1 /homework1/exercice1 /homework1/....
+  - eg, /homework1/exercice1 /homework1/exercice2 /homework1/....
   - or. /hw1/ex1 /hw1/ex2 /hw1/..
 
 Commands (not implemented yet)
 ------------------------------
 
 * adc init -- initalize working directory
-  - creates a .acd dictionary with config-files and global template
+  - creates a .adc dictionary with config-files and global template
   - config-file: global config-file + user input
 * adc config -- configure existing config
   - opens the cli for changing the config-file
