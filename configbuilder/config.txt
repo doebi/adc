@@ -2,4 +2,7 @@
 name = Max Mustermann
 
 [document]
+documentname = 
+date = 
+coursename = 
 

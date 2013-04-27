@@ -27,13 +27,17 @@ config.read('.configure')
 
 #set data
 author = config.get('global', 'name')
+date = config.get('document', 'date')
+documentname = config.get('document', 'documentname')
+coursename = config.get('document', 'coursename')
+
 
 #defining data for use in template
 nameSpace = {
              'author': author,
-             'course': 'ADF2 / PRO2 SS 13',
-             'date': date.today().isoformat(),
-             'documentname': 'Uebung 333',
+             'course': coursename,
+             'date': date,
+             'documentname': documentname,
              'exercises': getExercises(),
              'numOfEx': numOfEx,
             }
