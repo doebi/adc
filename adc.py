@@ -22,11 +22,12 @@ def getConfig():
     #reading data from configfile
     config = ConfigParser.RawConfigParser()
     config.read('.adc/.config')
-    return config
+    documentConfig = dict(config.items('document')) 
+    return documentConfig
 
 #Generate Latex File
 def generateTex():
-    config =  getConfig()
+    config = getConfig()
 
     #open file for writing
     f = open('compiled.tex', 'w')
