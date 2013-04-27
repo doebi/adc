@@ -26,11 +26,11 @@ config = ConfigParser.RawConfigParser()
 config.read('.configure')
 
 #set data
-author = config.get('global', 'name')
+author = config.get('global', 'author')
+
 date = config.get('document', 'date')
 documentname = config.get('document', 'documentname')
 coursename = config.get('document', 'coursename')
-
 
 #defining data for use in template
 nameSpace = {

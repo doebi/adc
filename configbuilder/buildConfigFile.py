@@ -3,7 +3,7 @@ import ConfigParser
 config = ConfigParser.RawConfigParser()
 
 config.add_section('global')
-config.set('global', 'name', 'Max Mustermann')
+config.set('global', 'author', 'Max Mustermann')
 
 config.add_section('document')
 config.set('document', 'documentname', '')
