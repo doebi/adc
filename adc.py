@@ -68,16 +68,16 @@ def generateTex():
 
 #Init
 def init():
-    os.makedirs('.adc')
+    if not os.path.exists('.adc'): 
+        os.makedirs('.adc')
     open('.adc/.config', 'w').close()
     makeConfig()
 
-#setup defaults if not exists
-if not os.path.exists('.adc'):
+#setup config if not exists
+try:
+   with open('.adc/.config'): pass
+except IOError:
     init()
 
-print os.listdir(os.getcwd())
-
-
-#generate tex File
+#generate Tex File
 generateTex()
