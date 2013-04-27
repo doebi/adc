@@ -60,7 +60,8 @@ def init():
 if not os.path.exists('.adc'):
     init()
 
-print os.getcwd()
+print os.listdir(os.getcwd())
+
 
 #generate tex File
 generateTex()
