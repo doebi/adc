@@ -5,7 +5,7 @@ from Cheetah.Template import Template
 import time
 from datetime import date
 
-numOfEx = 3
+numOfEx = 10
 
 def getExercises():
     exercises = list()
