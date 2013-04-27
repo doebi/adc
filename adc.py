@@ -8,6 +8,8 @@ import fnmatch
 import ConfigParser
 from datetime import date
 
+numOfEx = 3
+
 def getExercises():
     exercises = list()
     for i in range(numOfEx):
@@ -57,6 +59,8 @@ def init():
 #setup defaults if not exists
 if not os.path.exists('.adc'):
     init()
+
+print os.getcwd()
 
 #generate tex File
 generateTex()
