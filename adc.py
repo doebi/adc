@@ -38,7 +38,7 @@ def makeConfig():
     config.set('document', 'date', '2013-04-29')
     config.set('document', 'coursename', 'ADF oder so')
     config.set('document', 'idea', 'idea.txt')
-    config.set('document', 'exercice-pattern', 'idea.txt')
+    config.set('document', 'exercice-pattern', 'ex*')
 
     with open('.adc/.config', 'w') as configfile:
         config.write(configfile);
