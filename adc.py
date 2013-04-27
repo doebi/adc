@@ -2,11 +2,19 @@
 #tool for automatic generation of documentation
 
 from Cheetah.Template import Template
+import os
 import time
+import fnmatch
 import ConfigParser
 from datetime import date
 
 numOfEx = 5 
+
+def getFiles(path, pattern):
+      return [i for r, NIL, items in os.walk(path) for i in items if fnmatch.fnmatch(i, pattern)];
+
+def getFolders(path, pattern):
+      return [i for r, items, NIL in os.walk(path) for i in items if fnmatch.fnmatch(i, pattern)];
 
 def getExercises():
     exercises = list()
