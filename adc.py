@@ -22,7 +22,7 @@ def getExercises(pattern):
                 exercise['sourceFile'] = 'source.pas'
                 exercises.append(exercise)
         break
-    print exercises
+    return exercises
 
 def getConfig():
     #reading data from configfile
