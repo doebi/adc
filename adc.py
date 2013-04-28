@@ -13,15 +13,29 @@ numOfEx = 3
 
 def getExercises(pattern):
     exercises = list()
-
+    """
     for file in os.listdir('.'):
-          if fnmatch.fnmatch(file, pattern):
+          if fnmatch.fnmatch(str(file).lower(), pattern):
               exercise = dict()
               exercise['title'] = file
               exercise['solutionText'] = 'Blablabla'
               exercise['sourceFile'] = 'source.pas'
               exercises.append(exercise)
+    print exercises 
     return exercises    
+    """  
+ 
+    path = os.getcwd()
+    for (path, dirs, files) in os.walk(path):
+        for dir in dirs: 
+            if fnmatch.fnmatch(str(dir).lower(), pattern.lower()):
+                exercise = dict()
+                exercise['title'] = dir
+                exercise['solutionText'] = 'Blablabla'
+                exercise['sourceFile'] = 'source.pas'
+                exercises.append(exercise)
+        break
+    print exercises
 
 def getConfig():
     #reading data from configfile
@@ -71,7 +85,7 @@ def generateTex():
     f.close
     
     #create pdf
-    subprocess.call(['pdflatex', '.adc/' + filename])
+    #subprocess.call(['pdflatex', '.adc/' + filename])
 
 #Init
 def init():
@@ -87,4 +101,5 @@ except IOError:
     init()
 
 #generate Tex File
-generateTex()
+#generateTex()
+getExercises('ex*')
