@@ -5,6 +5,7 @@ from Cheetah.Template import Template
 import os
 import time
 import fnmatch
+import subprocess
 import ConfigParser
 from datetime import date
 
@@ -68,6 +69,9 @@ def generateTex():
     #writing template to file
     f.write(str(t))
     f.close
+    
+    #create pdf
+    subprocess.call(['pdflatex', '.adc/' + filename])
 
 #Init
 def init():
