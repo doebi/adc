@@ -9,8 +9,6 @@ import subprocess
 import ConfigParser
 from datetime import date
 
-numOfEx = 3
-
 def getExercises(pattern):
     exercises = list()
 
@@ -52,7 +50,8 @@ def generateTex():
 
     #open file for writing
     filename = config['documentname'] + '_' + config['date'] + '.tex'
-    f = open('.adc/' + filename, 'w')
+    #f = open('.adc/' + filename, 'w')
+    f = open(filename, 'w')
 
     #defining data for use in template
     nameSpace = {
@@ -70,9 +69,6 @@ def generateTex():
     f.write(str(t))
     f.close
     
-    #create pdf
-    subprocess.call(['pdflatex', '.adc/' + filename])
-
 #Init
 def init():
     if not os.path.exists('.adc'): 
