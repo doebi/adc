@@ -49,7 +49,7 @@
 \ifoot[]{\documentauthor}
 \ihead{\documentname}
 \ohead{\documentdate}
-\ofoot{Seite \thepage von \pageref{LastPage}}
+%\ofoot{Seite \thepage von \pageref{LastPage}}
 
 \begin{document}
 
