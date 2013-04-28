@@ -50,7 +50,8 @@ def generateTex():
     config = getConfig()
 
     #open file for writing
-    f = open('compiled.tex', 'w')
+    filename = config['documentname'] + '_' + config['date'] + '.tex'
+    f = open('.adc/' + filename, 'w')
 
     #defining data for use in template
     nameSpace = {
