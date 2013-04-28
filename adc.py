@@ -10,14 +10,16 @@ from datetime import date
 
 numOfEx = 3
 
-def getExercises():
+def getExercises(pattern):
     exercises = list()
-    for i in range(numOfEx):
-        exercise = dict()
-        exercise['title'] = 'Blablabla'
-        exercise['solutionText'] = 'Blablabla'
-        exercise['sourceFile'] = 'source.pas'
-        exercises.append(exercise)
+
+    for file in os.listdir('.'):
+          if fnmatch.fnmatch(file, pattern):
+              exercise = dict()
+              exercise['title'] = file
+              exercise['solutionText'] = 'Blablabla'
+              exercise['sourceFile'] = 'source.pas'
+              exercises.append(exercise)
     return exercises    
 
 def getConfig():
@@ -56,7 +58,7 @@ def generateTex():
                  'course': config['coursename'],
                  'date': config['date'],
                  'documentname': config['documentname'],
-                 'exercises': getExercises(),
+                 'exercises': getExercises(config['exercice-pattern'])
                 }
 
     #define template
