@@ -9,21 +9,8 @@ import subprocess
 import ConfigParser
 from datetime import date
 
-numOfEx = 3
-
 def getExercises(pattern):
-    exercises = list()
-    """
-    for file in os.listdir('.'):
-          if fnmatch.fnmatch(str(file).lower(), pattern):
-              exercise = dict()
-              exercise['title'] = file
-              exercise['solutionText'] = 'Blablabla'
-              exercise['sourceFile'] = 'source.pas'
-              exercises.append(exercise)
-    print exercises 
-    return exercises    
-    """  
+    exercises = list()  
  
     path = os.getcwd()
     for (path, dirs, files) in os.walk(path):
@@ -101,5 +88,4 @@ except IOError:
     init()
 
 #generate Tex File
-#generateTex()
-getExercises('ex*')
+generateTex()
