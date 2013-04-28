@@ -32,3 +32,4 @@ Usefull links
 ---------------------------------------------------------------------------
 * for merging the instruction file from moodle maybe we could use 
   http://pybrary.net/pyPdf/
+* for running + logging tests [+pdflatex]: http://docs.python.org/2/library/subprocess.html
