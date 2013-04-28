@@ -33,3 +33,4 @@ Usefull links
 * for merging the instruction file from moodle maybe we could use 
   http://pybrary.net/pyPdf/
 * for running + logging tests [+pdflatex]: http://docs.python.org/2/library/subprocess.html
+* good article about writing ebnf, pseudocode and syntax-highlighting in LaTeX [german]: http://www.jkrieger.de/tools/latex/informatik.html
