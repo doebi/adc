@@ -40,7 +40,7 @@ def makeConfig():
     config.set('document', 'author', 'Max Mustermann')
     config.set('document', 'documentname', 'Uebung 3')
     config.set('document', 'date', '2013-04-29')
-    config.set('document', 'coursename', 'ADF oder so')
+    config.set('document', 'course', 'ADF oder so')
     config.set('document', 'idea', 'idea.txt')
     config.set('document', 'exercice-pattern', 'ex*')
 
@@ -49,20 +49,14 @@ def makeConfig():
 
 #Generate Latex File
 def generateTex():
-    config = getConfig()
+    nameSpace = getConfig()
 
     #open file for writing
-    filename = config['documentname'] + '_' + config['date'] + '.tex'
+    filename = nameSpace['documentname'] + '_' + nameSpace['date'] + '.tex'
     f = open('.adc/' + filename, 'w')
 
     #defining data for use in template
-    nameSpace = {
-                 'author': config['author'],
-                 'course': config['coursename'],
-                 'date': config['date'],
-                 'documentname': config['documentname'],
-                 'exercises': getExercises(config['exercice-pattern'])
-                }
+    nameSpace['exercises'] = getExercises(nameSpace['exercice-pattern'])
 
     #define template
     t = Template(file=".adc/templates/default.template", searchList=[nameSpace])
