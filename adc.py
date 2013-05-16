@@ -68,6 +68,7 @@ def generateTex():
     #create pdf
     #subprocess.call(['pdflatex', '.adc/' + filename])
 
+
 #Init
 def init():
     if not os.path.exists('.adc'): 
