@@ -3,6 +3,7 @@ Automatic Document Creator
 
 key features
 ---------------------------
+kljnhkl
 
 * global configuration
 /home/.adcconfig
