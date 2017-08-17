@@ -82,5 +82,7 @@ try:
 except IOError:
     init()
 
+print("Hello World")
+
 #generate Tex File
 generateTex()
