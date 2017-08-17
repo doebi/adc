@@ -3,8 +3,8 @@ Automatic Document Creator
 
 key features
 ---------------------------
-kljnhklgv
-jhgik
+kljnhkl
+jhbhgtuf
 
 * global configuration
 /home/.adcconfig
